@@ -10,9 +10,8 @@ bot = commands.Bot(command_prefix="!")
 async def on_ready():
     print("Logged in as " + str(bot.user) + " in:")
     print(bot.guilds)
-    
 
-@bot.command(aliases=['a'])
+@bot.command(aliases=["a"])
 async def ascensor(ctx, member: discord.Member):
     guild: discord.Guild = ctx.guild
     chanels = guild.voice_channels
@@ -30,5 +29,6 @@ async def on_message(message):
         return
     if message.channel.id == 453183946264674304:
         await frases.send(message.content)
+    await bot.process_commands(message)
 
 bot.run(config.dicordApiKey)
