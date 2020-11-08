@@ -31,4 +31,4 @@ async def on_message(message):
         await frases.send(message.content)
     await bot.process_commands(message)
 
-bot.run(config.dicordApiKey)
+bot.run(config.token)
